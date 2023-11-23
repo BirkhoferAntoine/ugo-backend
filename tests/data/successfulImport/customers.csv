@@ -1,0 +1,5 @@
+customer_id;title;lastname;firstname;postal_code;city;email
+9999999;2;Norris;Chuck;83600;Fréjus;chuck@norris.com
+9999987;1;Galante;Marie;;;marie-galante@france.fr
+3999997;2;Barbier;Christophe;75009;Paris;christophe@fake.email
+8897987;1;;
