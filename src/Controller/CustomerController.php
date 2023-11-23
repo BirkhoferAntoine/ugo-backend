@@ -16,7 +16,7 @@ class CustomerController extends AbstractController
     public function listCustomers(CustomerRepository $customerRepository): Response
     {
         $customers = $customerRepository->findAll();
-        return $this->json($customers, Response::HTTP_OK, [], ['groups' => 'customer_details']);
+        return $this->json($customers, Response::HTTP_OK, ['Access-Control-Allow-Origin' => '*'], ['groups' => 'customer_details']);
     }
 
     #[Route('/customers/{id}/orders', name: 'customer_orders', methods: ['GET'])]
@@ -24,9 +24,9 @@ class CustomerController extends AbstractController
     {
         $customer = $customerRepository->find($id);
         if (!$customer) {
-            return $this->json(['message' => 'Customer not found'], Response::HTTP_NOT_FOUND);
+            return $this->json(['message' => 'Customer not found'], Response::HTTP_NOT_FOUND, ['Access-Control-Allow-Origin' => '*']);
         }
 
-        return $this->json($customer->getOrders(), Response::HTTP_OK, [], ['groups' => 'order_details']);
+        return $this->json($customer->getOrders(), Response::HTTP_OK, ['Access-Control-Allow-Origin' => '*'], ['groups' => 'order_details']);
     }
 }
