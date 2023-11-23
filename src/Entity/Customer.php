@@ -22,7 +22,7 @@ class Customer
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(["customer_details"])]
+    #[Groups(["order_details", "customer_details"])]
     private ?string $lastname = null;
 
     #[ORM\Column(length: 255)]

@@ -14,6 +14,7 @@ class Order
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(["order_details"])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(targetEntity: Customer::class, inversedBy: 'orders')]
