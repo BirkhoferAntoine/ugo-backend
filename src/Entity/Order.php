@@ -41,6 +41,13 @@ class Order
     #[Groups(["order_details"])]
     private ?\DateTimeInterface $date = null;
 
+
+    #[Groups(["order_details"])]
+    public function getCustomerLastname(): ?string
+    {
+        return $this->customer ? $this->customer->getLastname() : null;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
