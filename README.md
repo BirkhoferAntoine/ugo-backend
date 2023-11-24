@@ -8,10 +8,9 @@ Default csv import directory is located in var/data and is expecting customers.c
 
 
 composer install
-php bin/console database:create
-php bin/console migrations:migrate
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate
 php bin/console ugo:orders:import
 
 symfony serve
 
-Done.
